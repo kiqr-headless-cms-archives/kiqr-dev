@@ -1,107 +1,154 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+@font-face {
+  font-family: 'Intro Rust Base';
+  src: url('/fonts/IntroRust-Base.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.font-intro {
+  font-family: 'Intro Rust Base';
+}
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+body {
+  font-family: 'Poppins';
+  overscroll-behavior: none;
+}
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+/**
+ * Global and layout
+**/
+@layer base {
+  .h-nav {
+    @apply h-[4.5rem]
   }
-}
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  .mt-nav {
+    @apply mt-[4.5rem]
+  }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  .logo {
+    @apply font-intro p-4 -ml-4 rounded-full text-xl font-bold text-neutral-600 hover:text-primary-700 transition
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .wrapper {
+    @apply p-8 w-full flex flex-col gap-y-8
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  .wrapper > header:first-child {
+    @apply flex flex-col gap-y-0.5
+  }
+  
+  .wrapper > header:first-child p {
+    @apply text-sm text-neutral-400
+  }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  .screen-fill {
+    @apply absolute top-0 right-0 bottom-0 left-0 flex p-8 flex-col gap-y-10 items-center justify-center
+  }
+
+  h1, h2, h3 {
+    @apply font-intro text-neutral-600
+  }
+
+  .font-intro {
+    font-family: 'Intro Rust Base';
+  }
+
+  .sidebar-drawer {
+    @apply hidden fixed top-0 right-0 bottom-0 left-0
+  }
+
+  .sidebar-static {
+    @apply border-r
+  }
+
+  #sidebar {
+    @apply z-50 max-md:sidebar-drawer md:sidebar-static px-8 flex flex-col bg-neutral-50
+  }
+
+  #sidebar #navigations {
+    @apply flex flex-col gap-y-10
+  }
+
+  #sidebar #navigations nav > h5 {
+    @apply text-xs text-neutral-400 mb-4
+  }
+
+  #sidebar #navigations nav > ul {
+    @apply flex flex-col gap-y-4
+  }
+
+  #sidebar #navigations nav > ul > li > a,
+  #sidebar #navigations nav > ul > li .as-link {
+    @apply flex gap-x-3 items-center w-full text-sm font-semibold text-neutral-500 hover:text-primary-700
+  }
+
+
+  #navbar .topbar-dropdown {
+    @apply relative block;
+  }
+
+  #navbar .topbar-dropdown button {
+    @apply flex items-center text-left gap-x-4 text-primary-700 cursor-pointer;
+  }
+
+  #navbar .topbar-dropdown button img {
+    @apply w-9 h-9 rounded;
+  }
+
+  #navbar .topbar-dropdown .content {
+    @apply flex flex-col
+  }
+
+  #navbar .topbar-dropdown .content span {
+    @apply text-xs text-slate-400 font-normal;
+  }
+
+  #navbar .topbar-dropdown .items {
+    @apply bg-white divide-y absolute -left-2 -right-7 z-50 mt-3.5 shadow-sm border border-t-0 rounded-b whitespace-nowrap;
+  }
+
+  #navbar .topbar-dropdown .items .item {
+    @apply flex w-full p-4 gap-x-4 items-center text-xs hover:bg-neutral-100 hover:text-neutral-900 transition;
+  }
+
+  #navbar .topbar-dropdown .item:hover span {
+    @apply text-neutral-700
+  }
+
+  #main > .wrapper > header {
+    @apply border-b pb-8
+  }
+
+  .buttons-group {
+    @apply flex gap-x-5 justify-between;
+  }
+
+  .button {
+    @apply inline-flex items-center gap-x-1 py-2 px-3 leading-3 justify-center rounded transition shadow hover:shadow-none text-xs bg-neutral-50 font-bold whitespace-nowrap cursor-pointer;
+  }
+
+  .button.primary {
+    @apply bg-primary-700 hover:bg-primary-600 text-white
+  }
+
+  .button.danger {
+    @apply bg-red-600 hover:bg-red-700 text-white
+  }
+
+  .button.xs {
+    @apply px-2 py-1 text-xs
+  }
+
+  .button.md {
+    @apply px-4 py-3 text-sm
+  }
+
+  .button.lg {
+    @apply px-6 py-4 text-base
   }
 }

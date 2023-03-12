@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["10x"],
+  "rules": {
+    "10x/auto-import": [
+      "error",
+      {
+        "imports": {
+          "ReactNode": "import { ReactNode } from 'react'",
+
+          "Link": "import Link from 'next/link'"
+        }
+      }
+    ]
+  }
 }
