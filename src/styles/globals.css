@@ -46,6 +46,10 @@ body {
     @apply text-sm text-neutral-400
   }
 
+  .wrapper > header:first-child h1 {
+    @apply text-xl
+  }
+
   .screen-fill {
     @apply absolute top-0 right-0 bottom-0 left-0 flex p-8 flex-col gap-y-10 items-center justify-center
   }

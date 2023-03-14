@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "~atoms/*": ["./src/components/atoms/*"],
       "~organisms/*": ["./src/components/organisms/*"],
       "~/*": ["./src/*"]
     }

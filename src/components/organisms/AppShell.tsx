@@ -18,15 +18,19 @@ export const AppShell: React.FC<{
             <h5>Getting started</h5>
             <ul>
               <li><Link href="/docs/getting-started">Install the CLI</Link></li>
-              <li><Link href="/docs/getting-started/project-setup">Setup Link project locally</Link></li>
-              <li><Link href="/docs/getting-started/content-types">Create Link content type</Link></li>
+              <li><Link href="/docs/getting-started/project-setup">Setup a project locally</Link></li>
               <li><Link href="/docs/getting-started/content-types">Create a content type</Link></li>
+              <li><Link href="/docs/getting-started/pushing-schemas">Push your schema</Link></li>
             </ul>
           </nav>
         </div>
       </section>
       <section id="right" className="flex w-4/5 flex-col relative">
-        {children}
+        <div className="flex">
+          <div className="flex w-2/3">
+            {children}
+          </div>
+        </div>
       </section>
     </div>
   )
