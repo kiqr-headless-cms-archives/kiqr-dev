@@ -15,12 +15,17 @@ export const DocsLayout: React.FC<{
         </div>
         <div id="navigations" className="py-8">
           <nav id="content-type-navigation">
+            <ul>
+              <li><Link href="/docs">Introduction</Link></li>
+            </ul>
+          </nav>
+          <nav id="content-type-navigation">
             <h5>Getting started</h5>
             <ul>
               <li><Link href="/docs/getting-started">Install the CLI</Link></li>
-              <li><Link href="/docs/getting-started/project-setup">Setup a project locally</Link></li>
-              <li><Link href="/docs/getting-started/content-types">Create a content type</Link></li>
-              <li><Link href="/docs/getting-started/pushing-schemas">Push your schema</Link></li>
+              <li><Link href="/docs/getting-started/project-setup">Create a project</Link></li>
+              <li><Link href="/docs/getting-started/content-types">Your first content type</Link></li>
+              <li><Link href="/docs/getting-started/pushing-schemas">Push your changes</Link></li>
             </ul>
           </nav>
         </div>
