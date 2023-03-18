@@ -13,7 +13,8 @@
           "Link": "import Link from 'next/link'",
 
           // KIQR Components
-          "CommandBlock": "import { CommandBlock } from '~atoms/CommandBlock'"
+          "CommandBlock": "import { CommandBlock } from '~atoms/CommandBlock'",
+          "DocsLayout": "import { DocsLayout } from '~organisms/DocsLayout'"
         }
       }
     ]

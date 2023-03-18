@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
 
-export const AppShell: React.FC<{
+export const DocsLayout: React.FC<{
   children?: ReactNode
 }> = ({children}) => {
   return (
@@ -25,6 +25,7 @@ export const AppShell: React.FC<{
           </nav>
         </div>
       </section>
+      
       <section id="right" className="flex w-4/5 flex-col relative">
         <div className="flex">
           <div className="flex w-2/3">

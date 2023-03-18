@@ -1,18 +1,19 @@
+import { DocsLayout } from '~organisms/DocsLayout'
 import { CommandBlock } from '~atoms/CommandBlock'
 import Link from 'next/link'
 import Head from 'next/head'
 
 export default function GettingStartedPage() {
   return (
-    <>
+    <DocsLayout>
       <Head>
         <title>Install the command line application - KIQR</title>
       </Head>
 
       <div className="wrapper">
         <header>
-          <h1>Install the CLI</h1>
-          <p>Docs {'>'} Getting Started {'>'} Install the CLI</p>
+          <h1>Getting started with KIQR</h1>
+          <p>Docs {'>'} Getting started {'>'} Installation</p>
         </header>
 
         <h2>Introduction</h2>
@@ -45,6 +46,6 @@ export default function GettingStartedPage() {
           <Link href="/docs/getting-started/project-setup" className="button md primary">Setup a project locally</Link>
         </div>
       </div>
-    </>
+    </DocsLayout>
   )
 }

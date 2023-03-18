@@ -6,7 +6,6 @@ export default function Home() {
       <Head>
         <title>Get started with KIQR</title>
       </Head>
-      Hello world!
     </>
   )
 }
